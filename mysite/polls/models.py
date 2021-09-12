@@ -8,13 +8,10 @@ class Engineer(models.Model):
     surname = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
     project = models.CharField(max_length=50)
+    date_presence = models.DateTimeField('Date presence ')
 
     def __str__(self):
         return self.name
 
     def __str__(self):
         return self.surname
-
-
-class PresenceInfo(models.Model):
-    date = models.DateTimeField('date ')

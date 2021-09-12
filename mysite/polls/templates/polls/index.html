@@ -1,0 +1,9 @@
+{% if latest_engineer_list %}
+<ul>
+    {% for engineer in latest_engineer_list %}
+    <li><a href="/polls/{{ engineer.id }}/">{{ engineer.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
