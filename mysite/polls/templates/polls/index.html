@@ -1,9 +1,67 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+    integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 {% if latest_engineer_list %}
-<ul>
+<!-- <ul>
     {% for engineer in latest_engineer_list %}
     <li><a href="/polls/{{ engineer.id }}/">{{ engineer.name }}</a></li>
     {% endfor %}
-</ul>
+</ul> -->
+<li><a href="/polls/{{ engineer.id }}/">Add presence</a></li><br>
+<li><a href="/polls/">AddNewEngineer</a></li><br>
+<!-- <a href="{% /polls/ 'add' %}">AddNewEngineer</a> -->
+<a href="/polls/add %">AddNewEngineer</a>
+<p>Date/Time: <span id="datetime"></span></p>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>
+                Firstname
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Presence
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for engineer in latest_engineer_list %}
+        <tr>
+            <td>
+                <div>
+                    {{ engineer.name }}
+                </div>
+            </td>
+            <td>
+                <div>
+                    {{ engineer.surname }}
+                </div>
+            </td>
+            <td>
+                <div>
+                    {{ engineer.position }}
+                </div>
+            </td>
+            <td>
+                <input type="checkbox" />
+            </td>
+
+        </tr>
+        {% endfor %}
+        <!-- More people... -->
+    </tbody>
+
+</table>
 {% else %}
 <p>No polls are available.</p>
 {% endif %}
