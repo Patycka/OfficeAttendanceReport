@@ -1,15 +1,11 @@
 <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
     integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
 {% if latest_engineer_list %}
-<!-- <ul>
-    {% for engineer in latest_engineer_list %}
-    <li><a href="/polls/{{ engineer.id }}/">{{ engineer.name }}</a></li>
-    {% endfor %}
-</ul> -->
-<li><a href="/polls/{{ engineer.id }}/">Add presence</a></li><br>
-<li><a href="/polls/">AddNewEngineer</a></li><br>
-<!-- <a href="{% /polls/ 'add' %}">AddNewEngineer</a> -->
-<a href="/polls/add %">AddNewEngineer</a>
+
+<a href="mypresence">Add presence</a><br>
+<a href="/../admin">Add new Engineer Admin</a><br>
+<a href="newengineer">Add new Engineer</a><br>
+
 <p>Date/Time: <span id="datetime"></span></p>
 <script>
     var dt = new Date();

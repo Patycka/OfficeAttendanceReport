@@ -17,8 +17,14 @@ def index(request):
 
 
 def new_engineer(request):
-    return HttpResponse("Hello, add new enginer in RA")
+    template = loader.get_template('polls/new_engineer.html')
+    #add_engineer()
+    return HttpResponse(template.render())
 
 
 def my_presence(request):
     return HttpResponse("Hello, add my presence")
+
+
+def add_engineer():
+    Engineer.objects.create(name='Ania', surname='Kowalska', position='None', project='None')
